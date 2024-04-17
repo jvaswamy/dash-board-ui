@@ -1,3 +1,5 @@
+"use client";
+
 import { Component } from "react";
 
 import { FcGoogle } from "react-icons/fc";
@@ -30,6 +32,11 @@ class LoginForm extends Component {
     username: "",
     password: "",
   };
+
+  onGoogle = () => {
+    console.log("google");
+  };
+
   onChangeUsername = (event) => {
     this.setState({ username: event.target.value });
   };
@@ -81,7 +88,7 @@ class LoginForm extends Component {
             <SignHeading>Sign In</SignHeading>
             <SignLabel>Sign in to your account</SignLabel>
             <SignWithOterContainer>
-              <SighWithBtn type="button">
+              <SighWithBtn type="button" onClick={this.onGoogle}>
                 <FcGoogle width={18} height={18} />
                 <Text>Sign in with Google</Text>
               </SighWithBtn>
